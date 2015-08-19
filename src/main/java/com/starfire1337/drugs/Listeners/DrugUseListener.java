@@ -3,6 +3,7 @@ package com.starfire1337.drugs.Listeners;
 import com.starfire1337.drugs.Config.Config;
 import com.starfire1337.drugs.Drug.DrugManager;
 import com.starfire1337.drugs.Drugs;
+import com.starfire1337.drugs.Events.PlayerDrugConsumeEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -89,6 +90,9 @@ public class DrugUseListener implements Listener {
             drugUse.remove(p.getName());
         }
         drugUse.put(p.getName(), (int) (config.getInt(String.format("drugs.%s.cooldown", name)) + (System.currentTimeMillis() / 1000L)));
+
+        PlayerDrugConsumeEvent event = new PlayerDrugConsumeEvent(p, c.getDrug(name, 1), name);
+        Drugs.getInstance().getServer().getPluginManager().callEvent(event);
 
     }
 
