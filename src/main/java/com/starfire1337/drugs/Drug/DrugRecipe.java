@@ -1,6 +1,6 @@
-package com.starfire1337.drugs.Drug;
+package com.starfire1337.drugs.drug;
 
-import com.starfire1337.drugs.Config.Config;
+import com.starfire1337.drugs.config.Config;
 import com.starfire1337.drugs.Drugs;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;

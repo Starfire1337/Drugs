@@ -1,9 +1,9 @@
-package com.starfire1337.drugs.Listeners;
+package com.starfire1337.drugs.listeners;
 
-import com.starfire1337.drugs.Config.Config;
-import com.starfire1337.drugs.Drug.DrugManager;
+import com.starfire1337.drugs.config.Config;
+import com.starfire1337.drugs.drug.DrugManager;
 import com.starfire1337.drugs.Drugs;
-import com.starfire1337.drugs.Events.PlayerDrugConsumeEvent;
+import com.starfire1337.drugs.events.PlayerDrugConsumeEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -34,12 +34,6 @@ public class DrugUseListener implements Listener {
         }
 
         FileConfiguration config = Drugs.getInstance().getConfig();
-
-        if(!config.getBoolean("allow-milk")) {
-            if(e.getItem().getType().equals(Material.MILK_BUCKET)) {
-                e.setCancelled(true);
-            }
-        }
 
         if(config.getBoolean("force-sneak")) {
             if(!e.getPlayer().isSneaking()) {

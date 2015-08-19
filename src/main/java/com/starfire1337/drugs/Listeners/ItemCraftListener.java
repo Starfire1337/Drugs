@@ -1,7 +1,7 @@
-package com.starfire1337.drugs.Listeners;
+package com.starfire1337.drugs.listeners;
 
-import com.starfire1337.drugs.Config.Config;
-import com.starfire1337.drugs.Drug.DrugManager;
+import com.starfire1337.drugs.config.Config;
+import com.starfire1337.drugs.drug.DrugManager;
 import com.starfire1337.drugs.Drugs;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

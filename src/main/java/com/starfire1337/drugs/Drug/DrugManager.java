@@ -1,4 +1,4 @@
-package com.starfire1337.drugs.Drug;
+package com.starfire1337.drugs.drug;
 
 import org.bukkit.inventory.ItemStack;
 

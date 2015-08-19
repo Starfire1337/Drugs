@@ -1,4 +1,4 @@
-package com.starfire1337.drugs.Events;
+package com.starfire1337.drugs.events;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;

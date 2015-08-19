@@ -1,4 +1,4 @@
-package com.starfire1337.drugs.Config;
+package com.starfire1337.drugs.config;
 
 import com.starfire1337.drugs.Drugs;
 import org.bukkit.ChatColor;
