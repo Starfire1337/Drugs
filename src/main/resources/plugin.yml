@@ -1,0 +1,5 @@
+name: Drugs
+main: com.starfire1337.drugs.Drugs
+description: An ultimate configurable drugs plugin
+version: ${version}
+author: Starfire1337

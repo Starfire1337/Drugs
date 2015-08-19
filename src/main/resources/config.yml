@@ -1,0 +1,63 @@
+#A full list of effects can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html#SPEED
+#Please note that this plugin is still under heavy development! This means the configuration will probably change extremely often!
+
+config-version: 3 #Do not change this!
+check-config: true #Should the plugin check the config every time it loads/reloads? Recommended to be enabled after major config changes
+force-sneak: true #Do players have to sneak (Hold shift) while using drugs?
+allow-recraft: false #Should the players be allowed to use drugs to make drugs? Recommended to be kept at false unless you know what your doing!
+allow-milk: true #Should players be allowed to drink milk while they are high?
+
+drugs:
+  #Example of a shapeless recipe
+  cocaine:
+    displayname: '&eCocaine' #The name of the drug that users will see
+    item: '353' #Item ID of the drug in-game
+    craftable: true #Either true or false
+    recipe:
+      type: shapeless #Either 'shaped', 'shapeless' or 'smelted'
+      ingredients:
+      - '1,353' #A list in the format of <amount>,<itemid>
+      yield: 1 #How much should crafting output?
+    usage-message: '&cYou just took some Cocaine!' #Tell the user that they just took some cocaine
+    effects:
+      - 'SPEED,30,3' #Give the users 30 seconds of speed III
+      - 'JUMP,30,1' #Format: <type>,<time>,<level>
+    cooldown: 30 #The number of seconds the user has to wait before they take the drug again. Set to 0 to disable.
+    cooldown-message: "&eYou're too high to take cocaine!"
+  #Example of a shaped recipe
+  weed:
+    displayname: '&eWeed'
+    item: '351:10'
+    craftable: true
+    recipe:
+      type: shaped
+      shape:
+      #Use single-chars to represent an item. Use space for nothing/air
+      - ' f ' #Here, we would need: <AIR>   <FLOWER>   <AIR>
+      - 'fwf' #                   <FLOWER>    <DYE>   <FLOWER>
+      - ' f ' #                     <AIR>   <FLOWER>   <AIR> to make some weed
+      ingredients:
+        f: '37' #In the format of placeholder: <itemid>:<itemdata>, or just <itemid>
+        w: '351:10' #Placeholders are from 'shape'
+      yield: 1
+    usage-message: '&cUou just took some weed!'
+    effects:
+      - 'SLOW_DIGGING,30,1'
+      - 'CONFUSION,30,1'
+    cooldown: 30
+    cooldown-message: "&eYou're too high to take weed!"
+  #Example of a smelted drug
+  meth:
+    displayname: '&eMeth'
+    item: '406'
+    craftable: true
+    recipe:
+      type: smelted
+      ingredient: '406' #What goes in the furnace? In the form of <itemid>:<itemdata> or <itemid>.
+      yield: 1
+    usage-message: '&cYou just took some meth!'
+    effects:
+      - 'FAST_DIGGING,30,2'
+      - 'CONFUSION,30,1'
+    cooldown: 30
+    cooldown-message: "&eYou're too high to take meth!"
