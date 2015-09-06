@@ -9,6 +9,7 @@
     <version>1.1.0-b${env.BUILD_NUMBER}</version>
 
     <build>
+        <finalName>Drugs</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -19,21 +20,22 @@
                 </configuration>
             </plugin>
             <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
+                <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>copy-dependencies</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>copy-dependencies</goal>
+                            <goal>single</goal>
                         </goals>
-                        <configuration>
-                            <includeScope>compile</includeScope>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
-                            <excludeTransitive>false</excludeTransitive>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <finalName>Drugs</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
