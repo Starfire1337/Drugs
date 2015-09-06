@@ -49,6 +49,8 @@ public class Drugs extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        metrics.shutdown();
+
         plugin = null;
         metrics = null;
 

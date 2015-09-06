@@ -70,7 +70,7 @@
         <dependency>
             <groupId>com.starfire1337.metrics</groupId>
             <artifactId>Metrics</artifactId>
-            <version>1.0.0</version>
+            <version>LATEST</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
