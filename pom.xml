@@ -34,7 +34,11 @@
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-      </repository>
+        </repository>
+        <repository>
+            <id>starfire1337-repo</id>
+            <url>http://repo.starfire1337.com/content/repositories/public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -43,6 +47,12 @@
             <artifactId>bukkit</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.starfire1337.metrics</groupId>
+            <artifactId>Metrics</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

@@ -5,6 +5,7 @@ import com.starfire1337.drugs.config.ConfigCheck;
 import com.starfire1337.drugs.listeners.*;
 import com.starfire1337.drugs.drug.DrugManager;
 import com.starfire1337.drugs.drug.DrugRecipe;
+import com.starfire1337.metrics.Metrics;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,6 +14,7 @@ public class Drugs extends JavaPlugin {
     private static Plugin plugin;
 
     private ConfigCheck configcheck = new ConfigCheck();
+    private Metrics metrics;
 
     @Override
     public void onEnable() {
@@ -20,6 +22,7 @@ public class Drugs extends JavaPlugin {
         saveDefaultConfig();
 
         plugin = this;
+        metrics = new Metrics(this);
 
         getServer().getPluginManager().registerEvents(new ItemCraftListener(), this);
         getServer().getPluginManager().registerEvents(new DrugUseListener(), this);
@@ -47,6 +50,7 @@ public class Drugs extends JavaPlugin {
     @Override
     public void onDisable() {
         plugin = null;
+        metrics = null;
 
         DrugManager.clearDrugs();
     }
