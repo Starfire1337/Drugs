@@ -27,6 +27,7 @@ public class Drugs extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ItemCraftListener(), this);
         getServer().getPluginManager().registerEvents(new DrugUseListener(), this);
         getServer().getPluginManager().registerEvents(new MilkDrinkListener(), this);
+        getServer().getPluginManager().registerEvents(new UpdateChecker(), this);
 
         getCommand("drugs").setExecutor(new DrugCommand());
 

@@ -2,6 +2,7 @@
 #Please note that this plugin is still under heavy development! This means the configuration will probably change extremely often!
 
 config-version: 3 #Do not change this!
+update-checking: true #Should the plugin check for updates each time a user with the permission 'drugs.admin' logs on?
 check-config: true #Should the plugin check the config every time it loads/reloads? Recommended to be enabled after major config changes
 force-sneak: true #Do players have to sneak (Hold shift) while using drugs?
 allow-recraft: false #Should the players be allowed to use drugs to make drugs? Recommended to be kept at false unless you know what your doing!
