@@ -18,7 +18,7 @@ public class DrugCommand implements CommandExecutor {
                 sender.sendMessage(ChatColor.YELLOW + String.format("Created by: %sStarfire1337", ChatColor.RED));
                 return true;
             }
-            switch(args[0]) {
+            switch(args[0].toLowerCase()) {
                 case "reload":
                     Drugs.getInstance().getServer().clearRecipes();
                     DrugManager.clearDrugs();
@@ -41,6 +41,9 @@ public class DrugCommand implements CommandExecutor {
                         recipe.addRecipes();
                     }
                     sender.sendMessage(ChatColor.YELLOW + "Reload complete!");
+                    break;
+                case "give":
+                    //TODO: Give users drugs
                     break;
                 default:
                     return true;
